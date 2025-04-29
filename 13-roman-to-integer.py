@@ -10,11 +10,11 @@ class Solution:
 
         for i in range(len(s) - 1, -1, -1):
             currentNum = numeralMap[sdd[i]]
-            if currentNum >= sum:
+            if currentNum >= prevNum:
                 sum += currentNum
-            elif currentNum < sum:
+            elif currentNum < prevNum:
                 sum -= currentNum
-        print(sum)
+            prevNum = currentNum
         return sum
 
 
