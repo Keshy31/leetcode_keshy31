@@ -3,14 +3,17 @@ import time
 
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
-        print(str1)
-        print(str2)
+        if str1 + str2 != str2 + str1:
+            return ""
+        len1 = len(str1)
+        len2 = len(str2)
 
-        for i in range(0, len(str2), 1):
-            if str1[i] == str2[i]:
-                print("true")
+        def gcd(len1: int, len2: int):
+            while len2:
+                len1, len2 = len2, len1 % len2
+            return len1
 
-        return ""
+        return str1[: gcd(len1, len2)]
 
 
 str1 = "ABCABC"
@@ -24,4 +27,4 @@ end_time = time.perf_counter_ns()
 
 elapsed_time = (end_time - start_time) / 100000
 
-print(f"Execution time: {elapsed_time:.2f} milliseconds")
+print(f"Execution time: {elapsed_time:.3f} milliseconds")
