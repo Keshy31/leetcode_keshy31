@@ -5,17 +5,17 @@ class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         p1 = 0
         p2 = 0
-        merged = ""
+        merged = []
 
         while p1 < len(word1) or p2 < len(word2):
             if p1 < len(word1):
-                merged += word1[p1]
+                merged.append(word1[p1])
                 p1 += 1
             if p2 < len(word2):
-                merged += word2[p2]
+                merged.append(word2[p2])
                 p2 += 1
             print(merged)
-        return merged
+        return "".join(merged)
 
 
 word1 = "abcd"
