@@ -3,8 +3,21 @@ import time
 
 class Solution:
     def kidsWithCandies(self, candies: list[int], extraCandies: int) -> list[bool]:
-        print(candies)
-        return [True]
+        result = []
+        max = 0
+
+        for i in range(0, len(candies), 1):
+            if candies[i] > max:
+                max = candies[i]
+
+        for i in range(0, len(candies), 1):
+            if candies[i] + extraCandies >= max:
+                result.append(True)
+            else:
+                result.append(False)
+
+        print(result)
+        return result
 
 
 candies = [2, 3, 5, 1, 3]
