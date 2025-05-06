@@ -4,25 +4,20 @@ import time
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
         print(strs)
-        if len(strs) == 0:
-            return ""
-
-        if len(strs[0]) == 0:
+        if not strs:
             return ""
 
         commonPrefix = strs[0]
-        p = 1
 
-        while p < len(strs) and len(commonPrefix) > 0:
+        for p in range(1, len(strs)):
             testString = strs[p]
-            if len(testString) == 0:
-                commonPrefix = ""
-                break
+            if not commonPrefix or not testString:
+                return ""
 
             print(commonPrefix)
             print(testString)
 
-            for i in range(0, len(commonPrefix), 1):
+            for i in range(len(commonPrefix)):
                 if testString[i] != commonPrefix[i]:
                     commonPrefix = commonPrefix[0:i]
                     break
