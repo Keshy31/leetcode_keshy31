@@ -4,29 +4,17 @@ import time
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        if s[0] in {")", "}", "]"}:
-            return False
+        hashmap = {")": "(", "]": "[", "}": "{"}
         for i in range(len(s)):
             if s[i] in {"(", "{", "["}:
                 stack.append(s[i])
-            elif s[i] == ")":
-                if stack.pop() != "(":
+            elif s[i] in {")", "}", "]"}:
+                if not stack or stack.pop() != hashmap[s[i]]:
                     return False
-            elif s[i] == "}":
-                if stack.pop() != "{":
-                    return False
-            elif s[i] == "]":
-                if stack.pop() != "[":
-                    return False
-            print(stack)
-
-        if stack:
-            return False
-
         return True
 
 
-s = "]"
+s = "}"
 
 start_time = time.perf_counter_ns()
 solution = Solution()
