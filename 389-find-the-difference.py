@@ -3,22 +3,19 @@ import time
 
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
-        if not s:
-            return t
-        print(s)
-        hashset = set(s)
-        print(hashset)
+        output = 0
 
+        for i in range(len(s)):
         for i in range(len(t)):
-            if t[i] not in hashset:
-                print(t[i])
-                return t[i]
-
-        return ""
+            if i < len(s):
+                output ^= ord(s[i])
+            output ^= ord(t[i])
+        print(chr(output))
+        return chr(output)
 
 
 s = "a"
-t = "aa"
+t = "ea"
 
 start_time = time.perf_counter_ns()
 solution = Solution()
