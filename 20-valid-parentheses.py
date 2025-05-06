@@ -11,10 +11,14 @@ class Solution:
             elif s[i] in {")", "}", "]"}:
                 if not stack or stack.pop() != hashmap[s[i]]:
                     return False
+
+        if stack:
+            return False
+
         return True
 
 
-s = "}"
+s = "(){}}{"
 
 start_time = time.perf_counter_ns()
 solution = Solution()
