@@ -7,22 +7,21 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         p1 = 0
-        p2 = 0
+        p2 = len(nums)
 
-        while p1 < len(nums):
+        while p1 < p2:
             print(f"{nums} index {p1} value: {nums[p1]}")
-            if nums[p1] != 0:
-                nums[p2] = nums[p1]
-                p2 += 1
-                print(f"P2 is {p2}")
-                p1 += 1
+            if nums[p1] == 0:
+                print("ping")
+                nums.append(0)
+                nums.pop(p1)
+                p2 -= 1
             else:
-                nums[p1] = 0
                 p1 += 1
         print(nums)
 
 
-nums = [0, 1, 0, 3, 12]
+nums = [1, 2, 3, 0, 0, 0, 4, 0, 2, 0, 1, 2, 0, 0]
 
 start_time = time.perf_counter_ns()
 solution = Solution()
