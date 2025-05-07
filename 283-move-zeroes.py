@@ -7,17 +7,14 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         p1 = 0
-        p2 = len(nums)
+        p2 = 0
 
-        while p1 < p2:
+        while p2 < len(nums):
             print(f"{nums} index {p1} value: {nums[p1]}")
-            if nums[p1] == 0:
-                print("ping")
-                nums.append(0)
-                nums.pop(p1)
-                p2 -= 1
-            else:
+            if nums[p2] != 0:
+                nums[p2], nums[p1] = nums[p1], nums[p2]
                 p1 += 1
+            p2 += 1
         print(nums)
 
 
