@@ -4,6 +4,8 @@ import time
 class Solution:
     def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
         print(flowerbed)
+        if not n:
+            return True
         p = 0
         while p < len(flowerbed):
             if flowerbed[p] == 0 and flowerbed[p - 1] != 1 and flowerbed[p + 1] != 1:
