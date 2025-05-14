@@ -8,12 +8,13 @@ class Solution:
         print(int(largeIntString) + 1)
         largeInt = int(largeIntString) + 1
         test = list(str(largeInt))
+        test = [int(x) for x in test]
         print(test)
 
         return []
 
 
-digits = [9]
+digits = [0]
 
 start_time = time.perf_counter_ns()
 solution = Solution()
