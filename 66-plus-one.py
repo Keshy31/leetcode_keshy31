@@ -3,12 +3,8 @@ import time
 
 class Solution:
     def plusOne(self, digits: list[int]) -> list[int]:
-        print(digits)
         largeIntString = "".join(str(x) for x in digits)
-        print(int(largeIntString) + 1)
         largeInt = int(largeIntString) + 1
-        test = list(str(largeInt))
-
         return [int(x) for x in list(str(largeInt))]
 
 
