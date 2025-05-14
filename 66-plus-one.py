@@ -8,10 +8,8 @@ class Solution:
         print(int(largeIntString) + 1)
         largeInt = int(largeIntString) + 1
         test = list(str(largeInt))
-        test = [int(x) for x in test]
-        print(test)
 
-        return []
+        return [int(x) for x in list(str(largeInt))]
 
 
 digits = [0]
