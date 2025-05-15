@@ -19,7 +19,7 @@ class Solution:
                     lr_position -= 1
         print(ud_position + lr_position)
 
-        return ud_position + lr_position == 0
+        return ud_position == 0 and lr_position == 0
 
 
 moves = "UD"
