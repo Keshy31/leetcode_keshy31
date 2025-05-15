@@ -21,7 +21,7 @@ class Solution:
                     print(int(operation))
                     record.append(int(operation))
         print(sum(record))
-        return 1
+        return sum(record)
 
 
 ops = ["1", "C"]
