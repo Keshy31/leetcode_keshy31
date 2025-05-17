@@ -37,14 +37,13 @@ class Solution:
                         direction = "South"
                     elif move == "R":
                         direction = "North"
+        if pos == [0, 0] or direction != "North":
+            return True
 
-        print(pos)
-        print(direction)
-
-        return True
+        return False
 
 
-instructions = "GG"
+instructions = "GL"
 
 start_time = time.perf_counter_ns()
 solution = Solution()
