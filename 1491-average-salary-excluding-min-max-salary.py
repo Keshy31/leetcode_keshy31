@@ -11,7 +11,7 @@ class Solution:
         print(f"N = {length}")
 
         print(f"Result = {(total - minimum - maximum) / (length - 2)}")
-        return 1.0
+        return (total - minimum - maximum) / (length - 2)
 
 
 salary = [1000, 2000, 3000]
