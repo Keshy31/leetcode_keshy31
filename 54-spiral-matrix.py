@@ -4,26 +4,35 @@ import time
 class Solution:
     def spiralOrder(self, matrix: list[list[int]]) -> list[int]:
         print(matrix)
-        p = [0, 0]
-        m = len(matrix)
-        print(f"m = {m}")
+        top = 0
+        bottom = len(matrix)
+        left = 0
+        right = len(matrix[0])
+        result = []
 
-        n = len(matrix[0])
-        print(f"n = {n}")
+        while top < bottom and left < right:
+            for i in range(right - left):
+                result.append(matrix[top][left + i])
+                print(result)
+            top += 1
 
-        for i in range(m * n):
-            print(f"p --> {p} || value = {matrix[p[0]][p[1]]}")
+            for i in range(bottom - top):
+                result.append(matrix[top + i][right - 1])
+                print(result)
+            right -= 1
 
-            if p[0] == 0:
-                p[1] += 1
-            elif p[1] == 0:
-                p[0] -= 1
-            elif p[0] == m - 1:
-                p[1] -= 1
-            elif p[1] == n - 1:
-                p[0] += 1
+            if top < bottom:
+                for i in range(right - left):
+                    result.append(matrix[bottom - 1][right - 1 - i])
+                    print(result)
+                bottom -= 1
+            if left < right:
+                for i in range(bottom - top):
+                    result.append(matrix[bottom - 1 + i][left])
+                    print(result)
+                left += 1
 
-        return [1]
+        return result
 
 
 matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
