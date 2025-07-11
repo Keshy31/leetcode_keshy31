@@ -13,12 +13,17 @@ class Solution:
         if head is None:
             return head
 
-        print(head.val)
-        print_list(head.next)
-        head.next = None
-        print_list(head)
+        prev = None
+        curr = head
 
-        return head
+        print_list(curr)
+
+        while curr is not None:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        return prev
 
 
 # Helper function to print a linked list (for debugging)
